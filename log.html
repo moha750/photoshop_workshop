@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل في ورشة عمل الفوتوشوب</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <img src="img/line.png" alt="">
+        <h1>ورشة عمل الفوتوشوب للمبتدئين</h1>
+        <p>من الصفر الى الإحتراف</p>
+    </header>
+<hr>
+    <section>
+        <img src="img/me.png" alt="">
+    </section>
+
+    <h1 class="title">التسجيل في الورشة</h1>
+
+    <form  name="google-sheet">
+        <center>
+            <div>
+                <div>
+    <label  for="الأسم">:الأسم</label> <br>
+    </div>
+    <input class="text" type="text" placeholder="أكتب أسمك هنا" name="الأسم" required> <br>
+    </div>
+    <div>
+        <div>
+    <label  for="رقم الجوال">:رقم الجوال</label> <br>
+    </div>
+    <input class="text" type="number" placeholder="أكتب رقم جوالك هنا" name="رقم الجوال" required> <br>
+    </div>
+    <div>
+        <div>
+    <label  for="العمر">:العمر</label> <br>
+    </div>
+    <input class="text" type="number" placeholder="أكتب عمرك هنا" name="العمر" required> <br>
+    </div>
+    <div>
+        <div>
+    <label for="هل لديك لابتوب؟">:هل لديك لابتوب</label> <br>
+    </div>
+    <input class="c" type="radio" name="هل لديك لابتوب؟" value="نعم" required> <b>لا </b> 
+    <input class="c" type="radio" name="هل لديك لابتوب؟" value="لا" required> <b>نعم </b> <br>
+    </div>
+    <div>
+        <div>
+    <label for="هل لديك برنامج الفوتوشوب؟">:هل لديك برنامج الفوتوشوب</label> <br>
+    </div>
+    <input class="c" type="radio" name="هل لديك برنامج الفوتوشوب؟" value="نعم" required><b>لا</b>
+    <input class="c" type="radio" name="هل لديك برنامج الفوتوشوب؟" value="لا" required> <b>نعم</b> <br>
+    </div>
+    <div>
+        <div>
+    <label for="ما مدى خبرتك بالفوتوشوب؟">:ما مدى خبرتك بالفوتوشوب</label> <br>
+    </div>
+    <select required class="sel" name="ما مدى خبرتك بالفوتوشوب؟">
+        <option value="مبتدئ" >مبتدئ</option>
+        <option value="متوسط" >متوسط</option>
+        <option value="خبير" >خبير</option>
+    </select> <br>
+    </div>
+    <button>تسجيل</button>
+
+    <a href="https://api.whatsapp.com/send?phone=966554909663" target="_blank"><h1 class="pro"><i class="fa-brands fa-whatsapp"></i> في حال واجهتك مشكلة تواصل على</h1></a>
+
+</center>
+    </form>
+
+    <footer>
+        <p>تصميم وبرمجة/ محمد إسماعيل المطر</p>
+        <p>جميع الحقوق محفوظة لمحمد إسماعيل المطر</p>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxW-A28US4auX8o8ilNaEa6EJvpfw-S0Dx7-t1-HOec4UL4rSxxUAopHO3eTrOaFwcI/exec'
+        const form = document.forms['google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          Swal.fire({
+  title: '!مبروك تم تسجيلك في الورشة',
+  text: "سيتم التواصل معك في أقرب وقت ممكن",
+  icon: 'success',
+  confirmButtonColor: '#31a8ff',
+  confirmButtonText: 'تم'
+})
+        })
+      </script>
+</body>
+</html>
